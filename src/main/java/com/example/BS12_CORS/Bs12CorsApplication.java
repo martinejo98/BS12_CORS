@@ -3,6 +3,8 @@ package com.example.BS12_CORS;
 import org.springframework.boot.SpringApplication;
 import org.springframework.boot.autoconfigure.SpringBootApplication;
 import org.springframework.cloud.openfeign.EnableFeignClients;
+import org.springframework.web.bind.annotation.CrossOrigin;
+import org.springframework.web.bind.annotation.RequestMethod;
 
 @SpringBootApplication
 @EnableFeignClients("com.example.BS9_Clase_RestTemplate_Usos_con_Feign.feign")

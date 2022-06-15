@@ -18,7 +18,7 @@ import javax.validation.Valid;
 import java.util.List;
 
 @RestController
-@RequestMapping("/persona")
+//@RequestMapping("/persona")
 public class PersonaController{
 
     @Autowired
@@ -33,7 +33,8 @@ public class PersonaController{
     @Autowired
     private ProfesorService profesorService;
 
-    @PostMapping("/addPersona")
+    @CrossOrigin(origins = "https://cdpn.io")
+    @PostMapping("/addperson")
     public PersonaOutputDTO addPersona(@RequestBody @Valid PersonaInputDTO personaInputDTO) throws Exception {            //@valid valida que lso datos que le paso sean correctos.
         return personaService.addPersona(personaInputDTO);
     }
@@ -61,7 +62,8 @@ public class PersonaController{
         }
     }
 
-    @GetMapping("/getAll")
+    @CrossOrigin(origins = "https://cdpn.io")
+    @GetMapping("/getall")
     public List <PersonaOutputDTO> getAll(@RequestParam(value = "outputType", defaultValue = "simple") String outputType){
         if(outputType.equals("full")){
             return personaService.getAllFull();
